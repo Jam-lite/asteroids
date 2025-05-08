@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from player import Player
 
 def main():
     pygame.init()
@@ -7,6 +8,8 @@ def main():
 
     clock = pygame.time.Clock()
     dt = 0
+
+    player1 = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
 
     # === GAME LOOP ===
     while True:
@@ -16,6 +19,8 @@ def main():
             
         # Fill the screen with black
         screen.fill("black")
+
+        player1.draw(screen)
 
         # Update (flip) the display
         pygame.display.flip()
